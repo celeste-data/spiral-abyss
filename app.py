@@ -85,4 +85,13 @@ for date_str, label in zip(vline_dates, vline_texts):
         yanchor="bottom"
     )
 
+
 st.plotly_chart(fig, use_container_width=True)
+
+st.write("""
+         
+데이터 범위: 3.0버전 (22-09-01) ~ 5.8버전 (25-08-15)
+         
+데이터 출처: [YShelper](https://yshelper.com/#/pages/rank/rank)
+         
+""")
