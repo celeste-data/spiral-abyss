@@ -38,31 +38,11 @@ fig = px.line(filtered_df,
     hover_data=["버전"]
 )
 
+fig.update_layout(showlegend=True)
+
 fig.update_xaxes(
     tickformat="%y-%-m-%-d"
 )
-
-fig.update_layout(
-    showlegend=False
-)
-
-
-for name in selected_names:
-    person_df = filtered_df[filtered_df["이름"] == name].sort_values("기간")
-    if len(person_df) == 0:
-        continue
-
-    last_row = person_df.iloc[-1]
-    x_val, y_val = last_row["기간"], last_row["사용률"]
-
-    fig.add_annotation(
-        x=x_val,
-        y=y_val,
-        text=name,
-        showarrow=False,
-        xanchor="left",
-        yanchor="bottom"
-    )
 
 
 vline_dates = version_info["start_date"].values.tolist()
@@ -84,7 +64,6 @@ for date_str, label in zip(vline_dates, vline_texts):
         xanchor="left",
         yanchor="bottom"
     )
-
 
 st.plotly_chart(fig, use_container_width=True)
 
