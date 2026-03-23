@@ -69,7 +69,7 @@ st.plotly_chart(fig, use_container_width=True)
 
 st.write("""
          
-데이터 범위: 3.0버전 (22-09-01) ~ 5.8버전 (25-08-15)
+데이터 범위: 3.0버전 (22-09-01) ~ 6.4버전 (26-03-31)
          
 데이터 출처: [YShelper](https://yshelper.com/#/pages/rank/rank)
          
